@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+</head>
+<body>
+  <input type="text" id="result" readonly="readonly">
+  <div>
+    <input type="button" value="1" onclick="edit(this.value)">
+    <input type="button" value="2" onclick="edit(this.value)">
+    <input type="button" value="3" onclick="edit(this.value)">
+    <input type="button" value="+" onclick="edit(this.value)">
+  </div>
+  <div>
+    <input type="button" value="4" onclick="edit(this.value)">
+    <input type="button" value="5" onclick="edit(this.value)">
+    <input type="button" value="6" onclick="edit(this.value)">
+    <input type="button" value="-" onclick="edit(this.value)">
+  </div>
+  <div>
+    <input type="button" value="7" onclick="edit(this.value)">
+    <input type="button" value="8" onclick="edit(this.value)">
+    <input type="button" value="9" onclick="edit(this.value)">
+    <input type="button" value="*" onclick="edit(this.value)">
+  </div>
+  <div>
+    <input type="button" value="0" onclick="edit(this.value)">
+    <input type="button" value="." onclick="edit(this.value)">
+    <input type="button" value="/ " onclick="edit(this.value)">
+    <input type="button" value="=" onclick="calc()">
+  </div>
+  <div>
+    <input type="button" value="(" onclick="edit(this.value)">
+    <input type="button" value=")" onclick="edit(this.value)">
+    <input type="button" value="AC" onclick="reset()">
+  </div>
+
+    <script language="javascript" type="text/javascript">
+        const result=document.getElementById("result");
+        function edit(value){
+        result.value=result.value+value;
+    }
+    function calc(){
+        result.value=new Function("return "+result.value)();
+    }
+    function reset(){
+        result.value="";
+    }
+    </script>
+
+    <style>
+      input{
+        background-color: #CCCCCC;
+        border-radius: 10px;
+      }
+    </style>
+
+</body>
+</html>
